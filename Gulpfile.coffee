@@ -8,6 +8,8 @@ istanbul = require 'gulp-coffee-istanbul'
 coffeelint = require 'gulp-coffeelint'
 clayLintConfig = require 'clay-coffeescript-style-guide'
 
+TEST_TIMEOUT = 300
+
 paths =
   coffee: ['./src/**/*.coffee', './*.coffee', './test/**/*.coffee']
   cover: ['./src/**/*.coffee', './*.coffee']
@@ -23,7 +25,7 @@ karmaConf =
     useIframe: true
     captureConsole: true
     mocha:
-      timeout: 300
+      timeout: TEST_TIMEOUT
   files: [
     "#{paths.build}/#{paths.output.tests}"
   ]
@@ -52,7 +54,7 @@ gulp.task 'test:browser:phantom', ['build:test'], (cb) ->
 
 gulp.task 'test:node', ->
   gulp.src paths.rootTests
-    .pipe mocha()
+    .pipe mocha({timeout: TEST_TIMEOUT})
 
 gulp.task 'test:coverage', ->
   gulp.src paths.cover
@@ -60,7 +62,7 @@ gulp.task 'test:coverage', ->
     .pipe istanbul.hookRequire()
     .on 'finish', ->
       gulp.src paths.rootTests
-        .pipe mocha()
+        .pipe mocha({timeout: TEST_TIMEOUT})
         .pipe istanbul.writeReports({
           reporters: ['html', 'text', 'text-summary']
         })
