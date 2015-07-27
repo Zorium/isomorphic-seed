@@ -1,14 +1,10 @@
 {
-  "name": "isomorphic-seed",
+  "name": "loga",
   "version": "0.0.0",
-  "description": "Scaffolding for isomorphic coffeescript libraries",
+  "description": "a logging library",
   "keywords": [
-    "isomorphic",
-    "scaffolding",
-    "library",
-    "bootstrap",
-    "coffee",
-    "coffeescript"
+    "log",
+    "logging"
   ],
   "main": "src/index.coffee",
   "scripts": {
@@ -19,10 +15,10 @@
   "license": "MIT",
   "author": "Zolmeister (https://zolmeister.com/)",
   "dependencies": {
-    "coffee-script": "^1.9.3",
-    "lodash": "^3.10.0"
+    "coffee-script": "^1.9.3"
   },
   "devDependencies": {
+    "lodash": "^3.10.0",
     "clay-coffeescript-style-guide": "^1.1.0",
     "coffee-loader": "^0.7.2",
     "gulp": "^3.9.0",
@@ -45,10 +41,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zorium/isomorphic-seed.git"
+    "url": "https://github.com/Zolmeister/loga.git"
   },
   "bugs": {
-    "url": "https://github.com/Zorium/isomorphic-seed/issues"
+    "url": "https://github.com/Zolmeister/loga/issues"
   },
-  "homepage": "https://github.com/Zorium/isomorphic-seed"
+  "homepage": "https://github.com/Zolmeister/loga"
 }
