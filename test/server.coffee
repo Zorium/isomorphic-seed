@@ -2,7 +2,7 @@ assert = require 'assert'
 
 example = require '../src'
 
-describe 'node example', ->
+describe 'server example', ->
   if window?
     return
 
