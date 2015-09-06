@@ -1,4 +1,4 @@
-assert = require 'assert'
+b = require 'b-assert'
 
 example = require '../src'
 
@@ -8,4 +8,4 @@ describe 'server example', ->
 
   it 'compares equals', ->
     res = example.compare 'a', 'a'
-    assert.equal res, true
+    b res, true
