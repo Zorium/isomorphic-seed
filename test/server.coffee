@@ -2,10 +2,10 @@ b = require 'b-assert'
 
 example = require '../src'
 
-describe 'server example', ->
-  if window?
-    return
+serverIt = if window? then (-> null) else it
 
-  it 'compares equals', ->
-    res = example.compare 'a', 'a'
-    b res, true
+serverIt 'server compares equals', ->
+  if window?
+    throw new Error 'This test only runs on the server'
+  res = example.compare 'a', 'a'
+  b res, true
