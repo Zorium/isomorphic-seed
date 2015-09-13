@@ -14,7 +14,8 @@
   "scripts": {
     "test": "node_modules/gulp/bin/gulp.js test",
     "watch": "node_modules/gulp/bin/gulp.js watch",
-    "watch-phantom": "node_modules/gulp/bin/gulp.js watch:phantom"
+    "watch-phantom": "node_modules/gulp/bin/gulp.js watch:phantom",
+    "preversion": "npm test"
   },
   "license": "MIT",
   "author": "Zolmeister (https://zolmeister.com/)",
