@@ -12,43 +12,40 @@
   ],
   "main": "src/index.coffee",
   "scripts": {
-    "test": "node_modules/gulp/bin/gulp.js test",
-    "watch": "node_modules/gulp/bin/gulp.js watch",
-    "watch-phantom": "node_modules/gulp/bin/gulp.js watch:phantom",
-    "preversion": "npm test"
+    "test": "yarn lint && yarn test-server && yarn test-browser && ./scripts.sh report-coverage",
+    "test-server": "./scripts.sh test-server",
+    "test-browser": "./scripts.sh test-browser",
+    "watch-server": "./scripts.sh watch-server",
+    "watch-browser": "./scripts.sh watch-browser",
+    "lint": "coffeelint $(find . -type f -name \\*.coffee -not -path ./node_modules/\\*)"
   },
   "license": "MIT",
   "author": "Zolmeister (https://zolmeister.com/)",
-  "dependencies": {
-    "coffee-script": "^1.9.3",
-    "lodash": "^3.10.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "b-assert": "^0.1.2",
-    "clay-coffeescript-style-guide": "^1.1.0",
-    "coffee-loader": "^0.7.2",
-    "gulp": "^3.9.0",
-    "gulp-coffee-istanbul": "^0.7.1",
-    "gulp-coffeelint": "^0.5.0",
-    "gulp-mocha": "^2.1.3",
-    "gulp-rename": "^1.2.2",
-    "json-loader": "^0.5.2",
-    "karma": "^0.13.3",
-    "karma-chrome-launcher": "^0.2.0",
-    "karma-firefox-launcher": "^0.1.6",
-    "karma-mocha": "^0.2.0",
-    "karma-phantomjs-launcher": "^0.2.0",
-    "mocha": "^2.2.5",
-    "phantomjs": "^1.9.17",
-    "webpack-stream": "^2.0.0"
+    "coffee-coverage": "^3.0.1",
+    "coffeelint": "^2.1.0",
+    "coffeescope2": "^0.5.1",
+    "coffeescript": "^2.4.1",
+    "istanbul": "^0.4.5",
+    "istanbul-instrumenter-loader": "^3.0.1",
+    "karma": "^4.4.1",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-coffee-preprocessor": "^1.0.1",
+    "karma-coverage-istanbul-reporter": "^2.1.0",
+    "karma-firefox-launcher": "^1.2.0",
+    "karma-mocha": "^1.3.0",
+    "karma-webpack": "^4.0.2",
+    "mocha": "^6.2.2",
+    "webpack": "^4.41.2",
+    "zolmeister-coffee-coverage-loader": "^1.0.2",
+    "zorium-coffeelint-config": "^1.2.3"
   },
   "directories": {
     "test": "test"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Zorium/isomorphic-seed.git"
-  },
+  "repository": "https://github.com/Zorium/isomorphic-seed.git",
   "bugs": {
     "url": "https://github.com/Zorium/isomorphic-seed/issues"
   },
